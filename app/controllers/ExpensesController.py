@@ -5,7 +5,7 @@ import json
 
 from app.models import Despesas, Departamento  
 
-from app.services.utils import verifica_campo_faltante
+from app.utils.utils import verifica_campo_faltante
 import datetime
 from django.db.models import Sum, Max, Min, Avg
 

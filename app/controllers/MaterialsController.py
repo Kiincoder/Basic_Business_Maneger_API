@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from app.models import Materiais
 from app.models import Departamento
-from app.services.utils import verifica_campo_faltante
+from app.utils.utils import verifica_campo_faltante
 
 import json
 
