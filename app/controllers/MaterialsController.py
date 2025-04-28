@@ -59,12 +59,22 @@ def criar(request):
 
 @csrf_exempt
 @require_http_methods(["PATCH"])
-def atualizar_qtd(request):
+def acrescentar_qtd(request):
   material = Materiais.objects.get(cod_item=json.loads(request.body.decode("utf-8")).get("cod_item"))
   material.quantidade = material.quantidade + 1
   material.save()
 
-  return JsonResponse({"a":"das"}, status=200)
+  return JsonResponse({"message":"Quantidade acrescida com sucesso!", "qtd_atual":material.quantidade}, status=200)
+
+@csrf_exempt
+@require_http_methods(["PATCH"])
+def decrescer_qtd(request):
+  material = Materiais.objects.get(cod_item=json.loads(request.body.decode("utf-8")).get("cod_item"))
+  material.quantidade = material.quantidade - 1
+  material.save()
+
+  return JsonResponse({"message":"Quantidade decrescida com sucesso!", "qtd_atual":material.quantidade}, status=200)
+
 
 @csrf_exempt
 @require_http_methods(["DELETE"])
