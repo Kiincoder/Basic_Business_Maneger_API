@@ -19,15 +19,15 @@ urlpatterns = [
     path('api/despesas/<str:id>/metricas/', listar_metricas_por_dpto), # Lista despesas de um setor com métricas
 
     path('api/materiais/', listar_materiais), # Lista todos materiais
-    path('api/materiais/acrescentar/', acrescentar_qtd), # Atualiza quantidade
-    path('api/materiais/decrescentar/', decrescer_qtd), # Atualiza quantidade
+    path('api/materiais/acrescentar/', acrescentar_qtd), # Acresce quantidade
+    path('api/materiais/decrescentar/', decrescer_qtd), # Decresce quantidade
     path('api/materiais/remover/', remover), # Remove um material
-    path('api/materiais/criar/', criar),
+    path('api/materiais/criar/', criar), # Cria um novo material
 
 
-    path('api/solicitacoes/<int:id>/status', status), # Lista todas solicitações de compra
-    path('api/solicitacoes/<int:id>/aprovar', aprovar), # Lista todas solicitações de compra
-    path('api/solicitacoes/<int:id>/rejeitar', rejeitar), # Lista todas solicitações de compra
-    path('api/solicitacoes/<int:id>/finalizar', finalizar), # Lista todas solicitações de compra
-    path('api/solicitacoes/solicitar', solicitar) # Lista todas solicitações de compra
+    path('api/solicitacoes/<int:id>/status', status), # Retorna o status de uma solicitação
+    path('api/solicitacoes/<int:id>/aprovar', aprovar), # Aprova uma solicitação de compra
+    path('api/solicitacoes/<int:id>/rejeitar', rejeitar), # Rejeita uma solicitação de compra
+    path('api/solicitacoes/<int:id>/finalizar', finalizar), # Finaliza uma determinada solicitação
+    path('api/solicitacoes/solicitar', solicitar) # Cria uma solicitação de compra 
 ]
